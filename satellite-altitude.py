@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 import math
+import sys
 import csv
 import numpy as np
 
@@ -22,10 +23,14 @@ def altitudeconvert(meanmotion):
 
 
 if __name__ == '__main__':
-    print("hello")
+    args = sys.argv
+
 
     # open sample TLE file
-    f = open('TLE-file/ISS-20200101-20200201.tle')
+    # specify TLE file directly 
+    # f = open('TLE-file/ISS-20200101-20200201.tle')
+    # specify TLE file by ARGV
+    f = open(args[1])
 
     line = f.readlines()
     f.close
@@ -40,5 +45,5 @@ if __name__ == '__main__':
         for l in lineToList:
             print(dateconvert(l[0].split()[3]), altitudeconvert(l[1].split()[7][0:11]))
 
-            # if you want to write to CSV file, uncomment out below line
+            # if you want to write to a CSV file, uncomment below line
             # writer.writerow([dateconvert(l[0].split()[3]), altitudeconvert(l[1].split()[7][0:11])])
