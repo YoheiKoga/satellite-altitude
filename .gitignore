@@ -2,3 +2,5 @@
 __pycache__/
 *.csv
 TLE-file/*.tle
+
+.DS_Store
