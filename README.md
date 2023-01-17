@@ -6,6 +6,10 @@
 - For example, you can get TLE data from [Space-Track.Org](https://www.space-track.org/auth/login)
     - You can use [python-astrodynamics/spacetrack: Python client for space-track.org](https://github.com/python-astrodynamics/spacetrack) library if you want
 
+- caution!
+    - This code is only applicable to TLE files, the year is post-2000
+
+
 <br>
 
 ### 

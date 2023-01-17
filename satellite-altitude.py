@@ -16,7 +16,7 @@ def dateconvert(timeset):
     return datetimeconvert
     
 def altitudeconvert(meanmotion):
-    sma = (mu/4*(24*60*60/ float(meanmotion) / math.pi)**2)**(1/3)
+    sma = (mu/4*(24*60*60/ float(meanmotion) / math.pi)**2)**(1/3) - 6371
     
     return sma
 
@@ -43,7 +43,7 @@ if __name__ == '__main__':
         writer = csv.writer(f)
 
         for l in lineToList:
-            print(dateconvert(l[0].split()[3]), altitudeconvert(l[1].split()[7][0:11]))
+            # print(dateconvert(l[0].split()[3]), altitudeconvert(l[1].split()[7][0:11]))
 
             # if you want to write to a CSV file, uncomment below line
-            # writer.writerow([dateconvert(l[0].split()[3]), altitudeconvert(l[1].split()[7][0:11])])
+            writer.writerow([dateconvert(l[0].split()[3]), altitudeconvert(l[1].split()[7][0:11])])
